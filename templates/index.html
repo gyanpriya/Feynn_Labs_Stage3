@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Energy Cost Prediction</title>
+</head>
+<body>
+    <h1>Energy Cost Prediction</h1>
+    <form action="/predict" method="POST">
+        <label for="energy_usage">Energy Usage (kWh):</label>
+        <input type="text" name="energy_usage" required><br>
+        
+        <label for="hvac_usage">HVAC Usage (kWh):</label>
+        <input type="text" name="hvac_usage" required><br>
+        
+        <label for="lighting_usage">Lighting Usage (kWh):</label>
+        <input type="text" name="lighting_usage" required><br>
+        
+        <label for="equipment_usage">Equipment Usage (kWh):</label>
+        <input type="text" name="equipment_usage" required><br>
+        
+        <input type="submit" value="Predict">
+    </form>
+
+    {% if prediction %}
+        <h2>Predicted Annual Cost: {{ prediction }}</h2>
+    {% endif %}
+</body>
+</html>
